@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import TopBar from "@/components/layout/TopBar";
+import Footer from "@/components/layout/Footer";
+import type { Metadata } from "next";
 import "./globals.css";
 
 const plusJKTSans = Plus_Jakarta_Sans({ subsets: ["latin"] });
@@ -17,7 +19,11 @@ export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="id-ID">
       <body className={plusJKTSans.className}>
-        <main>{children}</main>
+        <main>
+          <TopBar />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
